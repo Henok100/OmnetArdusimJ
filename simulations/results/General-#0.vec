@@ -1,0 +1,96 @@
+version 3
+run General-0-20240305-13:50:12-13697
+attr configname General
+attr datetime 20240305-13:50:12
+attr datetimef 20240305-135012
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network src.NED.Network
+attr processid 13697
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../Thesis_CODE/Omnet/inet/images
+config network src.NED.Network
+config scheduler-class UDPsocketRTScheduler
+config description "Connection with ArduSim"
+config **.rt.module-eventlog-recording false
+config **.host[*].mobility.module-eventlog-recording false
+config **.numUAVs 2
+config *.host*.ipv4.arp.typename GlobalArp
+config *.host[*].numApps 1
+config *.host[*].app[0].typename DroneApp
+config *.radioMedium.typename Ieee80211DimensionalRadioMedium
+config *.radioMedium.backgroundNoise.power -90dBm
+config **.wlan[0].radio.typename Ieee80211DimensionalRadio
+config *.host[*].wlan[*].radio.transmitter.power 30mW
+config **.wlan[0].mac.typename Ieee80211Mac
+config **.wlan[0].mgmtType.typename Ieee80211MgmtAdhoc
+config **.wlan[0].opMode "\"p\""
+config **.radioMedium.pathLoss.typename RicianFading
+config **.radioMedium.pathLoss.k "7.6 dB"
+config **.radioMedium.obstacleLoss.typename DielectricObstacleLoss
+config **.physicalEnvironment.config "xmldoc(\"Val_Ob.xml\")"
+config *.host[*].mobility.typename LinearMobility
+config *.host[*].mobility.initFromDisplayString false
+config *.host[*].mobility.initialX 0m
+config *.host[*].mobility.initialY 0m
+
+vector 0 Network.host[0].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source warmup(count(frameSequenceStarted)-count(frameSequenceFinished))
+attr title "frame sequence active"
+vector 1 Network.host[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 2 Network.host[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 3 Network.host[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length"
+vector 4 Network.host[0].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source warmup(count(backoffStarted)-count(backoffStopped))
+attr title "backoff active"
+vector 5 Network.host[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 6 Network.host[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 7 Network.host[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 8 Network.host[1].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source warmup(count(frameSequenceStarted)-count(frameS
