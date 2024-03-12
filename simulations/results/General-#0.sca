@@ -1,8 +1,8 @@
 version 3
-run General-0-20240311-17:14:34-41090
+run General-0-20240312-17:37:40-83628
 attr configname General
-attr datetime 20240311-17:14:34
-attr datetimef 20240311-171434
+attr datetime 20240312-17:37:40
+attr datetimef 20240312-173740
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network src.NED.Network
-attr processid 41090
+attr processid 83628
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -29,14 +29,13 @@ config *.host[*].app[0].typename DroneApp
 config *.radioMedium.typename Ieee80211DimensionalRadioMedium
 config *.radioMedium.backgroundNoise.power -90dBm
 config **.wlan[0].radio.typename Ieee80211DimensionalRadio
-config *.host[*].wlan[*].radio.transmitter.power 20mW
+config *.host[*].wlan[*].radio.transmitter.power 100mW
 config **.wlan[0].mac.typename Ieee80211Mac
 config **.wlan[0].mgmtType.typename Ieee80211MgmtAdhoc
 config **.wlan[0].opMode "\"p\""
 config **.radioMedium.pathLoss.typename FreeSpacePathLoss
 config **.radioMedium.obstacleLoss.typename DielectricObstacleLoss
 config **.physicalEnvironment.config "xmldoc(\"Val_Ob.xml\")"
-config **.visualizer.canvasVisualizer.sceneVisualizer.viewAngle "\"isometric\""
 config *.host[*].mobility.typename LinearMobility
 config *.host[*].mobility.initFromDisplayString false
 config *.host[*].mobility.initialX 0m
@@ -85,7 +84,7 @@ par Network.radioMedium.obstacleLoss physicalEnvironmentModule "\"physicalEnviro
 par Network.radioMedium.obstacleLoss enableDielectricLoss true
 par Network.radioMedium.obstacleLoss enableReflectionLoss true
 scalar Network.radioMedium.obstacleLoss "Obstacle loss intersection computation count" 15816087
-scalar Network.radioMedium.obstacleLoss "Obstacle loss intersection count" 0
+scalar Network.radioMedium.obstacleLoss "Obstacle loss intersection count" 3442
 par Network.radioMedium.mediumLimitCache typename "\"inet.physicallayer.wireless.common.medium.MediumLimitCache\""
 par Network.radioMedium.mediumLimitCache centerFrequency 2.4e+09Hz
 attr unit Hz
@@ -122,9 +121,9 @@ scalar Network.radioMedium "transmission count" 1407
 scalar Network.radioMedium "signal send count" 1407
 scalar Network.radioMedium "reception computation count" 1407
 scalar Network.radioMedium "interference computation count" 5632
-scalar Network.radioMedium "reception decision computation count" 1407
-scalar Network.radioMedium "listening decision computation count" 2818
-scalar Network.radioMedium "reception cache hit" 85.714285714286
+scalar Network.radioMedium "reception decision computation count" 717
+scalar Network.radioMedium "listening decision computation count" 3508
+scalar Network.radioMedium "reception cache hit" 81.912842267644
 attr unit %
 scalar Network.radioMedium "interference cache hit" 66.666666666667
 attr unit %
@@ -159,7 +158,7 @@ attr unit m
 par Network.visualizer.canvasVisualizer.sceneVisualizer sceneMaxZ "nan m"
 attr unit m
 par Network.visualizer.canvasVisualizer.sceneVisualizer zIndex 0
-par Network.visualizer.canvasVisualizer.sceneVisualizer viewAngle "\"isometric\""
+par Network.visualizer.canvasVisualizer.sceneVisualizer viewAngle "\"x right y down z out\""
 attr mutable ""
 par Network.visualizer.canvasVisualizer.sceneVisualizer viewScale "\"1 1\""
 attr mutable ""
@@ -1236,7 +1235,7 @@ attr interpolationmode sample-hold
 attr recordingmode max
 attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
 attr title "queue length, max"
-scalar Network.host[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.0030144273504273
+scalar Network.host[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.0018968179129094
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1711,7 +1710,7 @@ par Network.host[0].wlan[0].radio.transmitter headerLength 192b
 attr unit b
 par Network.host[0].wlan[0].radio.transmitter bitrate -1bps
 attr unit bps
-par Network.host[0].wlan[0].radio.transmitter power 0.02W
+par Network.host[0].wlan[0].radio.transmitter power 0.1W
 attr unit W
 par Network.host[0].wlan[0].radio.transmitter centerFrequency 2.412e+09Hz
 attr unit Hz
@@ -2533,7 +2532,7 @@ par Network.host[1].wlan[0].mac.dcf.channelAccess.contention backoffOptimization
 scalar Network.host[1].wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 0
 attr recordingmode count
 attr title "channel access granted, count"
-scalar Network.host[1].wlan[0].mac.dcf.channelAccess.contention stateChanged:count 5714
+scalar Network.host[1].wlan[0].mac.dcf.channelAccess.contention stateChanged:count 2954
 attr enum IDLE,DEFER,IFS_AND_BACKOFF
 attr interpolationmode none
 attr recordingmode count
@@ -2562,7 +2561,7 @@ par Network.host[1].wlan[0].mac.dcf.recipientMacDataService typename "\"inet.lin
 scalar Network.host[1].wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
 attr recordingmode count
 attr title "packets deaggregated, count"
-scalar Network.host[1].wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 1365
+scalar Network.host[1].wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 691
 attr recordingmode count
 attr title "packets defragmented, count"
 scalar Network.host[1].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
@@ -2652,11 +2651,11 @@ attr title "frame sequences: number of packets"
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:count 1365
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:count 691
 attr interpolationmode none
 attr recordingmode count
 attr title "packets received, count"
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 1444170
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 731078
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr title "packets received, sum(packetBytes)"
@@ -2670,12 +2669,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source ieee80211Unicast(packetReceivedFromPeer)
 attr title "packets received: unicast, sum(packetBytes)"
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 1365
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 691
 attr interpolationmode none
 attr recordingmode count
 attr source ieee80211Multicast(packetReceivedFromPeer)
 attr title "packets received: multicast, count"
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 1444170
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 731078
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source ieee80211Multicast(packetReceivedFromPeer)
@@ -2700,12 +2699,12 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source ieee80211Retry(packetReceivedFromPeer)
 attr title "packets received: with retry, sum(packetBytes)"
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 1365
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 691
 attr interpolationmode none
 attr recordingmode count
 attr source ieee80211NotRetry(packetReceivedFromPeer)
 attr title "packets received: without retry, count"
-scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 1444170
+scalar Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 731078
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source ieee80211NotRetry(packetReceivedFromPeer)
@@ -2829,11 +2828,11 @@ attr enum off,sleep,receiver,transmitter,transceiver
 par Network.host[1].wlan[0].mac mtu 2304B
 attr unit B
 par Network.host[1].wlan[0].mac qosStation false
-scalar Network.host[1].wlan[0].mac packetReceivedFromLower:count 1407
+scalar Network.host[1].wlan[0].mac packetReceivedFromLower:count 717
 attr interpolationmode none
 attr recordingmode count
 attr title "packets received from lower layer, count"
-scalar Network.host[1].wlan[0].mac packetReceivedFromLower:sum(packetBytes) 1488606
+scalar Network.host[1].wlan[0].mac packetReceivedFromLower:sum(packetBytes) 758586
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr title "packets received from lower layer, sum(packetBytes)"
@@ -2853,30 +2852,30 @@ scalar Network.host[1].wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr title "packets received from upper layer, sum(packetBytes)"
-scalar Network.host[1].wlan[0].mac packetSentToUpper:count 1365
+scalar Network.host[1].wlan[0].mac packetSentToUpper:count 691
 attr interpolationmode none
 attr recordingmode count
 attr title "packets sent to upper layer, count"
-scalar Network.host[1].wlan[0].mac packetSentToUpper:sum(packetBytes) 1405950
+scalar Network.host[1].wlan[0].mac packetSentToUpper:sum(packetBytes) 711730
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr title "packets sent to upper layer, sum(packetBytes)"
-scalar Network.host[1].wlan[0].mac packetDrop:count 42
+scalar Network.host[1].wlan[0].mac packetDrop:count 26
 attr interpolationmode none
 attr recordingmode count
 attr source packetDropped
 attr title "packet drops, count"
-scalar Network.host[1].wlan[0].mac packetDrop:sum(packetBytes) 44436
+scalar Network.host[1].wlan[0].mac packetDrop:sum(packetBytes) 27508
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetDropped
 attr title "packet drops, sum(packetBytes)"
-scalar Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:count 42
+scalar Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:count 26
 attr interpolationmode none
 attr recordingmode count
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drops: incorrectly received, count"
-scalar Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 44436
+scalar Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 27508
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
@@ -2945,7 +2944,7 @@ par Network.host[1].wlan[0].radio.transmitter headerLength 192b
 attr unit b
 par Network.host[1].wlan[0].radio.transmitter bitrate -1bps
 attr unit bps
-par Network.host[1].wlan[0].radio.transmitter power 0.02W
+par Network.host[1].wlan[0].radio.transmitter power 0.1W
 attr unit W
 par Network.host[1].wlan[0].radio.transmitter centerFrequency 2.412e+09Hz
 attr unit Hz
@@ -3084,7 +3083,7 @@ attr interpolationmode sample-hold
 attr recordingmode count
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Network.host[1].wlan[0].radio receptionState:count 2815
+scalar Network.host[1].wlan[0].radio receptionState:count 1451
 attr interpolationmode sample-hold
 attr recordingmode count
 attr source receptionStateChanged
@@ -3095,162 +3094,165 @@ attr recordingmode count
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Network.host[1].wlan[0].radio minSnir:histogram
-field count 1407
-field mean 23.944244783371
-field stddev 0.062939202419708
-field min 23.913725636825
-field max 24.073951156187
-field sum 33689.552410203
-field sqrsum 806676.45920064
+field count 717
+field mean 29.222276794216
+field stddev 3.845562336261
+field min 6.4243557291766
+field max 29.992047225541
+field sum 20952.372461453
+field sqrsum 622864.48593644
 attr recordingmode histogram
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR"
 bin	-inf	0
-bin	23.87	0
-bin	23.875	0
-bin	23.88	0
-bin	23.885	0
-bin	23.89	0
-bin	23.895	0
-bin	23.9	0
-bin	23.905	0
-bin	23.91	1139
-bin	23.915	0
-bin	23.92	0
-bin	23.925	0
-bin	23.93	0
-bin	23.935	0
-bin	23.94	0
-bin	23.945	0
-bin	23.95	0
-bin	23.955	0
-bin	23.96	0
-bin	23.965	0
-bin	23.97	0
-bin	23.975	0
-bin	23.98	0
-bin	23.985	0
-bin	23.99	0
-bin	23.995	0
+bin	0.5	0
+bin	1	0
+bin	1.5	0
+bin	2	0
+bin	2.5	0
+bin	3	0
+bin	3.5	0
+bin	4	0
+bin	4.5	0
+bin	5	0
+bin	5.5	0
+bin	6	5
+bin	6.5	0
+bin	7	0
+bin	7.5	0
+bin	8	0
+bin	8.5	4
+bin	9	14
+bin	9.5	0
+bin	10	0
+bin	10.5	0
+bin	11	0
+bin	11.5	1
+bin	12	0
+bin	12.5	0
+bin	13	0
+bin	13.5	0
+bin	14	0
+bin	14.5	0
+bin	15	0
+bin	15.5	0
+bin	16	0
+bin	16.5	0
+bin	17	0
+bin	17.5	0
+bin	18	0
+bin	18.5	0
+bin	19	0
+bin	19.5	0
+bin	20	0
+bin	20.5	0
+bin	21	0
+bin	21.5	0
+bin	22	0
+bin	22.5	0
+bin	23	0
+bin	23.5	0
 bin	24	0
-bin	24.005	0
-bin	24.01	0
-bin	24.015	0
-bin	24.02	0
-bin	24.025	0
-bin	24.03	0
-bin	24.035	0
-bin	24.04	0
-bin	24.045	0
-bin	24.05	0
-bin	24.055	0
-bin	24.06	0
-bin	24.065	0
-bin	24.07	268
-bin	24.075	0
-bin	24.08	0
-bin	24.085	0
-bin	24.09	0
-bin	24.095	0
-bin	24.1	0
-bin	24.105	0
-bin	24.11	0
-bin	24.115	0
+bin	24.5	0
+bin	25	0
+bin	25.5	0
+bin	26	0
+bin	26.5	0
+bin	27	0
+bin	27.5	0
+bin	28	0
+bin	28.5	0
+bin	29	0
+bin	29.5	693
+bin	30	0
+bin	30.5	0
+bin	31	0
+bin	31.5	0
+bin	32	0
+bin	32.5	0
+bin	33	0
+bin	33.5	0
+bin	34	0
+bin	34.5	0
+bin	35	0
+bin	35.5	0
+bin	36	0
 statistic Network.host[1].wlan[0].radio packetErrorRate:histogram
-field count 1407
-field mean 0.028500701036746
-field stddev 0.0010582490730845
-field min 0.026319840100668
-field max 0.029013844786411
-field sum 40.100486358702
-field sqrsum 1.1444665400251
+field count 717
+field mean 0.034256229945852
+field stddev 0.17984732762552
+field min 0.00078433340689166
+field max 1
+field sum 24.561716871176
+field sqrsum 24.000455678899
 attr recordingmode histogram
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate"
 bin	-inf	0
-bin	0.0256	0
-bin	0.02565	0
-bin	0.0257	0
-bin	0.02575	0
-bin	0.0258	0
-bin	0.02585	0
-bin	0.0259	0
-bin	0.02595	0
-bin	0.026	0
-bin	0.02605	0
-bin	0.0261	0
-bin	0.02615	0
-bin	0.0262	0
-bin	0.02625	0
-bin	0.0263	268
-bin	0.02635	0
-bin	0.0264	0
-bin	0.02645	0
-bin	0.0265	0
-bin	0.02655	0
-bin	0.0266	0
-bin	0.02665	0
-bin	0.0267	0
-bin	0.02675	0
-bin	0.0268	0
-bin	0.02685	0
-bin	0.0269	0
-bin	0.02695	0
-bin	0.027	0
-bin	0.02705	0
-bin	0.0271	0
-bin	0.02715	0
-bin	0.0272	0
-bin	0.02725	0
-bin	0.0273	0
-bin	0.02735	0
-bin	0.0274	0
-bin	0.02745	0
-bin	0.0275	0
-bin	0.02755	0
-bin	0.0276	0
-bin	0.02765	0
-bin	0.0277	0
-bin	0.02775	0
-bin	0.0278	0
-bin	0.02785	0
-bin	0.0279	0
-bin	0.02795	0
-bin	0.028	0
-bin	0.02805	0
-bin	0.0281	0
-bin	0.02815	0
-bin	0.0282	0
-bin	0.02825	0
-bin	0.0283	0
-bin	0.02835	0
-bin	0.0284	0
-bin	0.02845	0
-bin	0.0285	0
-bin	0.02855	0
-bin	0.0286	0
-bin	0.02865	0
-bin	0.0287	0
-bin	0.02875	0
-bin	0.0288	0
-bin	0.02885	0
-bin	0.0289	0
-bin	0.02895	0
-bin	0.029	1139
-bin	0.02905	0
-bin	0.0291	0
-bin	0.02915	0
-bin	0.0292	0
-bin	0.02925	0
-bin	0.0293	0
-bin	0.02935	0
-bin	0.0294	0
-bin	0.02945	0
-bin	0.0295	0
-bin	0.02955	0
-bin	0.0296	0
-bin	0.02965	0
-bin	0.0297	0
+bin	0	693
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	0
+bin	1	24
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
 statistic Network.host[1].wlan[0].radio bitErrorRate:histogram
 field count 0
 field mean -nan
@@ -3469,12 +3471,12 @@ par Network.host[1].udp icmpv6Module "\"^.ipv6.icmpv6\""
 par Network.host[1].udp crcMode "\"declared\""
 attr enum disabled,declared,computed
 par Network.host[1].udp defaultMulticastLoop true
-scalar Network.host[1].udp packetReceived:count 1365
+scalar Network.host[1].udp packetReceived:count 691
 attr interpolationmode none
 attr recordingmode count
 attr source packetReceived
 attr title "packets received, count"
-scalar Network.host[1].udp packetReceived:sum(packetBytes) 1375920
+scalar Network.host[1].udp packetReceived:sum(packetBytes) 696528
 attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetReceived
@@ -3489,7 +3491,7 @@ attr interpolationmode none
 attr recordingmode sum(packetBytes)
 attr source packetSent
 attr title "packets sent, sum(packetBytes)"
-scalar Network.host[1].udp passedUpPk:count 1365
+scalar Network.host[1].udp passedUpPk:count 691
 attr interpolationmode none
 attr recordingmode count
 attr source packetSentToUpper
