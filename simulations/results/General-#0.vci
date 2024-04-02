@@ -1,9 +1,9 @@
-file 10120455 1711467031                                        
+file 3551432 1712070534                                         
 version 3
-run General-0-20240326-18:25:18-14986
+run General-0-20240402-18:06:51-63238
 attr configname General
-attr datetime 20240326-18:25:18
-attr datetimef 20240326-182518
+attr datetime 20240402-18:06:51
+attr datetimef 20240402-180651
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network src.NED.Network
-attr processid 14986
+attr processid 63238
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -35,9 +35,9 @@ config **.wlan[0].mac.typename Ieee80211Mac
 config **.wlan[0].mgmtType.typename Ieee80211MgmtAdhoc
 config **.wlan[0].opMode "\"p\""
 config **.radioMedium.pathLoss.typename NakagamiFading
-config **.radioMedium.pathLoss.shapeFactor 1.53
+config **.radioMedium.pathLoss.shapeFactor 1.54
 config **.radioMedium.obstacleLoss.typename DielectricObstacleLoss
-config **.physicalEnvironment.config "xmldoc(\"UPV_3kmm.xml\")"
+config **.physicalEnvironment.config "xmldoc(\"Madrid.xml\")"
 config *.host[*].mobility.typename LinearMobility
 config *.host[*].mobility.initFromDisplayString false
 config *.host[*].mobility.initialX 0m
@@ -565,187 +565,187 @@ attr interpolationmode none
 attr recordingmode vector
 attr source queueingTime(packetDequeued)
 attr title "queueing times"
-vector 96 Network.host[1].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+vector 96 Network.host[5].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received from lower layer, packetBytes"
-vector 97 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+vector 97 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received, packetBytes"
-vector 98 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+vector 98 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211Multicast(packetReceivedFromPeer)
 attr title "packets received: multicast, packetBytes"
-vector 99 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+vector 99 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211NotRetry(packetReceivedFromPeer)
 attr title "packets received: without retry, packetBytes"
-vector 100 Network.host[1].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+vector 100 Network.host[5].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets sent to upper layer, packetBytes"
-vector 101 Network.host[1].udp packetReceived:vector(packetBytes) ETV
+vector 101 Network.host[5].udp packetReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetReceived
 attr title "packets received, packetBytes"
-vector 102 Network.host[4].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+vector 102 Network.host[3].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received from lower layer, packetBytes"
-vector 103 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+vector 103 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received, packetBytes"
-vector 104 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+vector 104 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211Multicast(packetReceivedFromPeer)
 attr title "packets received: multicast, packetBytes"
-vector 105 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+vector 105 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211NotRetry(packetReceivedFromPeer)
 attr title "packets received: without retry, packetBytes"
-vector 106 Network.host[4].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+vector 106 Network.host[3].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets sent to upper layer, packetBytes"
-vector 107 Network.host[4].udp packetReceived:vector(packetBytes) ETV
+vector 107 Network.host[3].udp packetReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetReceived
 attr title "packets received, packetBytes"
-vector 108 Network.host[2].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+vector 108 Network.host[4].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received from lower layer, packetBytes"
-vector 109 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+vector 109 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received, packetBytes"
-vector 110 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+vector 110 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211Multicast(packetReceivedFromPeer)
 attr title "packets received: multicast, packetBytes"
-vector 111 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+vector 111 Network.host[4].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source ieee80211NotRetry(packetReceivedFromPeer)
 attr title "packets received: without retry, packetBytes"
-vector 112 Network.host[2].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+vector 112 Network.host[4].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets sent to upper layer, packetBytes"
-vector 113 Network.host[2].udp packetReceived:vector(packetBytes) ETV
+vector 113 Network.host[4].udp packetReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetReceived
 attr title "packets received, packetBytes"
-vector 114 Network.host[5].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+vector 114 Network.host[2].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr title "packets received from lower layer, packetBytes"
-vector 115 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr title "packets received, packetBytes"
-vector 116 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source ieee80211Multicast(packetReceivedFromPeer)
-attr title "packets received: multicast, packetBytes"
-vector 117 Network.host[5].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source ieee80211NotRetry(packetReceivedFromPeer)
-attr title "packets received: without retry, packetBytes"
-vector 118 Network.host[5].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr title "packets sent to upper layer, packetBytes"
-vector 119 Network.host[5].udp packetReceived:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source packetReceived
-attr title "packets received, packetBytes"
-vector 120 Network.host[3].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr title "packets received from lower layer, packetBytes"
-vector 121 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr title "packets received, packetBytes"
-vector 122 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source ieee80211Multicast(packetReceivedFromPeer)
-attr title "packets received: multicast, packetBytes"
-vector 123 Network.host[3].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source ieee80211NotRetry(packetReceivedFromPeer)
-attr title "packets received: without retry, packetBytes"
-vector 124 Network.host[3].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr title "packets sent to upper layer, packetBytes"
-vector 125 Network.host[3].udp packetReceived:vector(packetBytes) ETV
-attr interpolationmode none
-attr recordingmode vector(packetBytes)
-attr source packetReceived
-attr title "packets received, packetBytes"
-vector 126 Network.host[5].wlan[0].mac packetDrop:vector(packetBytes) ETV
+vector 115 Network.host[2].wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropped
 attr title "packet drops, packetBytes"
-vector 127 Network.host[5].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+vector 116 Network.host[2].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drops: incorrectly received, packetBytes"
-vector 128 Network.host[2].wlan[0].mac packetDrop:vector(packetBytes) ETV
+vector 117 Network.host[1].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr title "packets received from lower layer, packetBytes"
+vector 118 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr title "packets received, packetBytes"
+vector 119 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, packetBytes"
+vector 120 Network.host[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, packetBytes"
+vector 121 Network.host[1].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr title "packets sent to upper layer, packetBytes"
+vector 122 Network.host[1].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 123 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr title "packets received, packetBytes"
+vector 124 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, packetBytes"
+vector 125 Network.host[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, packetBytes"
+vector 126 Network.host[2].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr title "packets sent to upper layer, packetBytes"
+vector 127 Network.host[2].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 128 Network.host[1].wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropped
 attr title "packet drops, packetBytes"
-vector 129 Network.host[2].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+vector 129 Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drops: incorrectly received, packetBytes"
-vector 130 Network.host[3].wlan[0].mac packetDrop:vector(packetBytes) ETV
+vector 130 Network.host[4].wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropped
 attr title "packet drops, packetBytes"
-vector 131 Network.host[3].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+vector 131 Network.host[4].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drops: incorrectly received, packetBytes"
-vector 132 Network.host[4].wlan[0].mac packetDrop:vector(packetBytes) ETV
+vector 132 Network.host[3].wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropped
 attr title "packet drops, packetBytes"
-vector 133 Network.host[4].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+vector 133 Network.host[3].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drops: incorrectly received, packetBytes"
-vector 134 Network.host[1].wlan[0].mac packetDrop:vector(packetBytes) ETV
+vector 134 Network.host[5].wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropped
 attr title "packet drops, packetBytes"
-vector 135 Network.host[1].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+vector 135 Network.host[5].wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
 attr interpolationmode none
 attr recordingmode vector(packetBytes)
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
@@ -912,168 +912,168 @@ attr recordingmode vector
 attr source throughput(packetReceived)
 attr title throughput
 attr unit bps
-0	41277 118363 0 192681 0 302.080752 6232 0 1 3115 3115
-1	159640 105562 0 192673 0 302.08 6235 0 1 3115 3115
-2	265202 114907 0 192673 0 302.08 6235 0 8464 26365360 223156407040
-3	380109 118363 0 192681 0 302.080752 6232 0 1 3115 3115
-4	498472 105538 0 192672 0 302.08 6232 0 1 3115 3115
-5	604010 61007 0 192670 0 302.08 3116 0 3115 4853170 10080034090
-6	665017 8 0 0 0 0 1 0 0 0 0
-7	665025 8 0 0 0 0 1 0 0 0 0
-8	665033 16 0 0 0 0 2 0 0 0 0
-9	665049 40 0 0 0 0 5 0 0 0 0
-10	665089 45 0 0 0 0 5 0 0 0 0
-11	665134 18 0 0 0 0 2 0 0 0 0
-12	665152 18 0 0 0 0 2 0 0 0 0
-13	665170 91869 0 192693 0 302.080753481058 3006 0 3005 4516515 9049590555
-14	757039 9 0 0 0 0 1 0 0 0 0
-15	757048 9 0 0 0 0 1 0 0 0 0
-16	757057 18 0 0 0 0 2 0 0 0 0
-17	757075 45 0 0 0 0 5 0 0 0 0
-18	757120 45 0 0 0 0 5 0 0 0 0
-19	757165 18 0 0 0 0 2 0 0 0 0
-20	757183 18 0 0 0 0 2 0 0 0 0
-21	757201 54211 0 192612 0 302.060756519158 1789 0 1788 1599366 1906977394
-22	811412 9 0 0 0 0 1 0 0 0 0
-23	811421 9 0 0 0 0 1 0 0 0 0
-24	811430 18 0 0 0 0 2 0 0 0 0
-25	811448 45 0 0 0 0 5 0 0 0 0
-26	811493 45 0 0 0 0 5 0 0 0 0
-27	811538 18 0 0 0 0 2 0 0 0 0
-28	811556 18 0 0 0 0 2 0 0 0 0
-29	811574 75931 0 192687 0 302.080753044061 2472 0 2471 3054156 5032231036
-30	887505 9 0 0 0 0 1 0 0 0 0
-31	887514 9 0 0 0 0 1 0 0 0 0
-32	887523 18 0 0 0 0 2 0 0 0 0
-33	887541 45 0 0 0 0 5 0 0 0 0
-34	887586 45 0 0 0 0 5 0 0 0 0
-35	887631 18 0 0 0 0 2 0 0 0 0
-36	887649 18 0 0 0 0 2 0 0 0 0
-37	887667 73072 0 192705 0 302.080755433267 2398 0 2397 2874003 4593614795
-38	960739 9 0 0 0 0 1 0 0 0 0
-39	960748 9 0 0 0 0 1 0 0 0 0
-40	960757 18 0 0 0 0 2 0 0 0 0
-41	960775 45 0 0 0 0 5 0 0 0 0
-42	960820 45 0 0 0 0 5 0 0 0 0
-43	960865 18 0 0 0 0 2 0 0 0 0
-44	960883 18 0 0 0 0 2 0 0 0 0
-45	960901 74055 0 192699 0 302.080753621413 2410 0 2409 2902845 4662936685
-46	1034956 9 0 0 0 0 1 0 0 0 0
-47	1034965 9 0 0 0 0 1 0 0 0 0
-48	1034974 124604 0 192682 0 302.080752 6233 0 3 15577 40499
-49	1159578 9 0 0 0 0 1 0 0 0 0
-50	1159587 27 0 0 0 0 3 0 2 2 4
-51	1159614 9 0 0 0 0 1 0 0 0 0
-52	1159623 27 0 0 0 0 3 0 2 2 4
-53	1159650 9 0 0 0 0 1 0 0 0 0
-54	1159659 27 0 0 0 0 3 0 2 2 4
-55	1159686 9 0 0 0 0 1 0 0 0 0
-56	1159695 27 0 0 0 0 3 0 2 2 4
-57	1159722 9 0 0 0 0 1 0 0 0 0
-58	1159731 27 0 0 0 0 3 0 2 2 4
-59	1159758 9 0 0 0 0 1 0 0 0 0
-60	1159767 124586 0 192682 0 302.080752 6231 0 1 3116 3116
-61	1284353 472676 0 192682 0 302.080752 24922 0 2 12460 24920
-62	1757029 173511 0 192689 0 302.080753481058 6213 1 3 12418 31026
-63	1930540 352236 0 192689 0 302.080753481058 12614 0 0 0 0
-64	2282776 169199 0 192708 0 302.080756519158 6059 1 3 12056 29986
-65	2451975 404304 0 192709 0 302.080756519158 14478 0 0 0 0
-66	2856279 171536 0 192683 0 302.080753044061 6137 1 3 12239 30511
-67	3027815 373546 0 192683 0 302.080753044061 13400 0 0 0 0
-68	3401361 171949 0 192701 0 302.080755433267 6157 1 3 12288 30656
-69	3573310 380488 0 192701 0 302.080755433267 13626 0 0 0 0
-70	3953798 171511 0 192695 0 302.080753621413 6137 1 3 12238 30506
-71	4125309 376782 0 192695 0 302.080753621413 13522 0 0 0 0
-72	4502091 10 0 0 0 0 1 15 15 15 225
-73	4502101 10 0 0 0 0 1 15 15 15 225
-74	4502111 10 0 0 0 0 1 15 15 15 225
-75	4502121 10 0 0 0 0 1 15 15 15 225
-76	4502131 10 0 0 0 0 1 15 15 15 225
-77	4502141 10 0 0 0 0 1 15 15 15 225
-78	4502151 65221 190 192664 1.67 302.08 3115 1008 1008 3139920 3165039360
-79	4567372 65221 192 192666 1.67 302.08 3115 1028 1028 3202220 3291882160
-80	4632593 65221 192 192666 1.67 302.08 3115 1028 1028 3202220 3291882160
-81	4697814 65221 195 192669 1.67 302.08 3115 1030 1030 3208450 3304703500
-82	4763035 65221 195 192669 1.67 302.08 3115 8464 8464 26365360 223156407040
-83	4828256 56941 195 194386 0.1 312.54 3126 0 423200 263653600 94356116761600
-84	4885197 57060 195 192669 1.67 302.08 3115 0 15 23364 243022
-85	4942257 65221 196 192670 1.67 302.08 3115 1008 1008 3139920 3165039360
-86	5007478 55876 199 192673 1.67 302.08 3115 0 0 0 0
-87	5063354 65221 199 192673 1.67 302.08 3115 8464 8464 26365360 223156407040
-88	5128575 56941 199 194386 0.1 312.54 3126 0 423200 263653600 94356116761600
-89	5185516 77681 199 192673 1.67 302.08 3115 12000000 12000000 37380000000 4.4856e+17
-90	5263197 65221 199 192673 1.67 302.08 3115 1058 1058 3295670 3486818860
-91	5328418 249154 200 192682 1.67 302.080752 12460 0 2 12460 18690
-92	5577572 78046 207 192681 1.670752 302.080752 3115 1058 1058 3295670 3486818860
-93	5655618 78046 207 192681 1.670752 302.080752 3115 1058 1058 3295670 3486818860
-94	5733664 78046 207 192681 1.670752 302.080752 3115 1058 1058 3295670 3486818860
-95	5811710 90506 207 192681 1.670752 302.080752 3115 0.000752 0.000752 2.34248 0.0017615449600001
-96	5902216 95856 210 192690 1.670753734585 302.080753481058 3099 1058 1058 3278742 3468909036
-97	5998072 92967 210 192690 1.670753734585 302.080753481058 3005 1058 1058 3179290 3363688820
-98	6091039 92967 210 192690 1.670753734585 302.080753481058 3005 1058 1058 3179290 3363688820
-99	6184006 92967 210 192690 1.670753734585 302.080753481058 3005 1058 1058 3179290 3363688820
-100	6276973 95972 210 192690 1.670753734585 302.080753481058 3005 1030 1030 3095150 3188004500
-101	6372945 95972 213 192693 1.670753734585 302.080753481058 3005 1008 1008 3029040 3053272320
-102	6468917 97486 216 192702 1.670755397466 302.080755433267 3053 1058 1058 3230074 3417418292
-103	6566403 76567 216 192702 1.670755397466 302.080755433267 2397 1058 1058 2536026 2683115508
-104	6642970 76567 216 192702 1.670755397466 302.080755433267 2397 1058 1058 2536026 2683115508
-105	6719537 76567 216 192702 1.670755397466 302.080755433267 2397 1058 1058 2536026 2683115508
-106	6796104 76567 216 192702 1.670755397466 302.080755433267 2397 1030 1030 2468910 2542977300
-107	6872671 76567 219 192705 1.670755397466 302.080755433267 2397 1008 1008 2416176 2435505408
-108	6949238 94770 222 192709 1.670756500378 302.080756519158 2968 1058 1058 3140144 3322272352
-109	7044008 57097 222 192609 1.670756500378 302.060756519158 1788 1058 1058 1891704 2001422832
-110	7101105 57097 222 192609 1.670756500378 302.060756519158 1788 1058 1058 1891704 2001422832
-111	7158202 57097 222 192609 1.670756500378 302.060756519158 1788 1058 1058 1891704 2001422832
-112	7215299 57097 222 192609 1.670756500378 302.060756519158 1788 1030 1030 1841640 1896889200
-113	7272396 57097 225 192612 1.670756500378 302.060756519158 1788 1008 1008 1802304 1816722432
-114	7329493 96938 229 192696 1.67075782969 302.080753621413 3033 1058 1058 3208914 3395031012
-115	7426431 77562 229 192696 1.67075782969 302.080753621413 2409 1058 1058 2548722 2696547876
-116	7503993 77562 229 192696 1.67075782969 302.080753621413 2409 1058 1058 2548722 2696547876
-117	7581555 77562 229 192696 1.67075782969 302.080753621413 2409 1058 1058 2548722 2696547876
-118	7659117 77562 229 192696 1.67075782969 302.080753621413 2409 1030 1030 2481270 2555708100
-119	7736679 77562 232 192699 1.67075782969 302.080753621413 2409 1008 1008 2428272 2447698176
-120	7814241 96989 274 192684 1.68075782646 302.080753044061 3034 1058 1058 3209972 3396150376
-121	7911230 79500 274 192684 1.68075782646 302.080753044061 2471 1058 1058 2614318 2765948444
-122	7990730 79500 274 192684 1.68075782646 302.080753044061 2471 1058 1058 2614318 2765948444
-123	8070230 79500 274 192684 1.68075782646 302.080753044061 2471 1058 1058 2614318 2765948444
-124	8149730 79500 274 192684 1.68075782646 302.080753044061 2471 1030 1030 2545130 2621483900
-125	8229230 79500 277 192687 1.68075782646 302.080753044061 2471 1008 1008 2490768 2510694144
-126	8308730 19376 281 190810 1.68075782969 299.170753573889 624 1058 1058 660192 698483136
-127	8328106 19376 281 190810 1.68075782969 299.170753573889 624 1058 1058 660192 698483136
-128	8347482 37673 316 192709 1.690756500378 302.080756519158 1180 1058 1058 1248440 1320849520
-129	8385155 37673 316 192709 1.690756500378 302.080756519158 1180 1058 1058 1248440 1320849520
-130	8422828 17489 318 188150 1.69075782646 295.300752951178 563 1058 1058 595654 630201932
-131	8440317 17489 318 188150 1.69075782646 295.300752951178 563 1058 1058 595654 630201932
-132	8457806 20919 646 192606 2.190755397466 302.060755433267 656 1058 1058 694048 734302784
-133	8478725 20919 646 192606 2.190755397466 302.060755433267 656 1058 1058 694048 734302784
-134	8499644 2983 1418 188204 3.620753734546 295.310753505099 94 1058 1058 99452 105220216
-135	8502627 2983 1418 188204 3.620753734546 295.310753505099 94 1058 1058 99452 105220216
-136	8505610 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-137	8563283 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-138	8620956 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-139	8678629 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-140	8736302 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-141	8793975 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-142	8851648 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-143	8909321 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-144	8966994 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-145	9024667 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-146	9082340 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-147	9140013 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-148	9197686 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-149	9255359 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-150	9313032 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-151	9370705 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-152	9428378 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-153	9486051 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-154	9543724 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-155	9601397 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-156	9659070 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-157	9716743 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-158	9774416 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-159	9832089 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-160	9889762 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-161	9947435 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-162	10005108 57673 194386 194386 0.1 312.54 3126 0 0 0 0
-163	10062781 57673 194386 194386 0.1 312.54 3126 0 0 0 0
+0	41275 39695 0 70662 0 109.140752 2232 0 1 1115 1115
+1	80970 35128 0 70654 0 109.14 2235 0 1 1115 1115
+2	116098 38473 0 70654 0 109.14 2235 0 8464 9437360 79877815040
+3	154571 39695 0 70662 0 109.140752 2232 0 1 1115 1115
+4	194266 35104 0 70653 0 109.14 2232 0 1 1115 1115
+5	229370 19790 0 70651 0 109.14 1116 0 1115 622170 462687090
+6	249160 8 0 0 0 0 1 0 0 0 0
+7	249168 8 0 0 0 0 1 0 0 0 0
+8	249176 16 0 0 0 0 2 0 0 0 0
+9	249192 40 0 0 0 0 5 0 0 0 0
+10	249232 45 0 0 0 0 5 0 0 0 0
+11	249277 18 0 0 0 0 2 0 0 0 0
+12	249295 18 0 0 0 0 2 0 0 0 0
+13	249313 26517 0 70668 0 109.140753468216 923 0 922 425503 261684345
+14	275830 9 0 0 0 0 1 0 0 0 0
+15	275839 9 0 0 0 0 1 0 0 0 0
+16	275848 18 0 0 0 0 2 0 0 0 0
+17	275866 45 0 0 0 0 5 0 0 0 0
+18	275911 45 0 0 0 0 5 0 0 0 0
+19	275956 18 0 0 0 0 2 0 0 0 0
+20	275974 18 0 0 0 0 2 0 0 0 0
+21	275992 26586 0 70680 0 109.140754358194 925 0 924 427350 263390050
+22	302578 9 0 0 0 0 1 0 0 0 0
+23	302587 9 0 0 0 0 1 0 0 0 0
+24	302596 18 0 0 0 0 2 0 0 0 0
+25	302614 45 0 0 0 0 5 0 0 0 0
+26	302659 45 0 0 0 0 5 0 0 0 0
+27	302704 18 0 0 0 0 2 0 0 0 0
+28	302722 18 0 0 0 0 2 0 0 0 0
+29	302740 28484 0 70686 0 109.140754826333 994 0 993 493521 326875409
+30	331224 9 0 0 0 0 1 0 0 0 0
+31	331233 9 0 0 0 0 1 0 0 0 0
+32	331242 18 0 0 0 0 2 0 0 0 0
+33	331260 45 0 0 0 0 5 0 0 0 0
+34	331305 45 0 0 0 0 5 0 0 0 0
+35	331350 18 0 0 0 0 2 0 0 0 0
+36	331368 18 0 0 0 0 2 0 0 0 0
+37	331386 23271 0 70692 0 109.140755643552 813 0 812 330078 178792250
+38	354657 9 0 0 0 0 1 0 0 0 0
+39	354666 9 0 0 0 0 1 0 0 0 0
+40	354675 18 0 0 0 0 2 0 0 0 0
+41	354693 45 0 0 0 0 5 0 0 0 0
+42	354738 45 0 0 0 0 5 0 0 0 0
+43	354783 18 0 0 0 0 2 0 0 0 0
+44	354801 18 0 0 0 0 2 0 0 0 0
+45	354819 30491 0 70674 0 109.140753880225 1061 0 1060 562330 397567310
+46	385310 9 0 0 0 0 1 0 0 0 0
+47	385319 9 0 0 0 0 1 0 0 0 0
+48	385328 41936 0 70663 0 109.140752 2233 0 3 5577 14499
+49	427264 9 0 0 0 0 1 0 0 0 0
+50	427273 27 0 0 0 0 3 0 2 2 4
+51	427300 9 0 0 0 0 1 0 0 0 0
+52	427309 27 0 0 0 0 3 0 2 2 4
+53	427336 9 0 0 0 0 1 0 0 0 0
+54	427345 27 0 0 0 0 3 0 2 2 4
+55	427372 9 0 0 0 0 1 0 0 0 0
+56	427381 27 0 0 0 0 3 0 2 2 4
+57	427408 9 0 0 0 0 1 0 0 0 0
+58	427417 27 0 0 0 0 3 0 2 2 4
+59	427444 9 0 0 0 0 1 0 0 0 0
+60	427453 41918 0 70663 0 109.140752 2231 0 1 1116 1116
+61	469371 158472 0 70663 0 109.140752 8922 0 2 4460 8920
+62	627843 58883 0 70664 0 109.140753468216 2201 1 3 4387 10931
+63	686726 126374 0 70664 0 109.140753468216 4730 0 0 0 0
+64	813100 59146 0 70676 0 109.140754358194 2207 1 3 4409 11011
+65	872246 127548 0 70676 0 109.140754358194 4764 0 0 0 0
+66	999794 59193 0 70682 0 109.140754826333 2211 1 3 4412 11006
+67	1058987 123894 0 70682 0 109.140754826333 4628 0 0 0 0
+68	1182881 58902 0 70688 0 109.140755643552 2201 1 3 4385 10921
+69	1241783 132354 0 70688 0 109.140755643552 4946 0 0 0 0
+70	1374137 59623 0 70670 0 109.140753880225 2225 1 3 4448 11116
+71	1433760 121988 0 70670 0 109.140753880225 4552 0 0 0 0
+72	1555748 10 0 0 0 0 1 15 15 15 225
+73	1555758 10 0 0 0 0 1 15 15 15 225
+74	1555768 10 0 0 0 0 1 15 15 15 225
+75	1555778 10 0 0 0 0 1 15 15 15 225
+76	1555788 10 0 0 0 0 1 15 15 15 225
+77	1555798 10 0 0 0 0 1 15 15 15 225
+78	1555808 22004 239 70645 1.98 109.14 1115 1008 1008 1123920 1132911360
+79	1577812 22004 241 70647 1.98 109.14 1115 1028 1028 1146220 1178314160
+80	1599816 22004 241 70647 1.98 109.14 1115 1028 1028 1146220 1178314160
+81	1621820 22004 244 70650 1.98 109.14 1115 1030 1030 1148450 1182903500
+82	1643824 22004 244 70650 1.98 109.14 1115 8464 8464 9437360 79877815040
+83	1665828 20870 244 72886 0.1 122.83 1229 0 423200 94373600 33462715161600
+84	1686698 19092 244 70650 1.98 109.14 1115 0 15 8433 88107
+85	1705790 22004 245 70651 1.98 109.14 1115 1008 1008 1123920 1132911360
+86	1727794 18659 248 70654 1.98 109.14 1115 0 0 0 0
+87	1746453 22004 248 70654 1.98 109.14 1115 8464 8464 9437360 79877815040
+88	1768457 20870 248 72886 0.1 122.83 1229 0 423200 94373600 33462715161600
+89	1789327 26464 248 70654 1.98 109.14 1115 12000000 12000000 13380000000 1.6056e+17
+90	1815791 22004 248 70654 1.98 109.14 1115 1058 1058 1179670 1248090860
+91	1837795 83818 249 70663 1.98 109.140752 4460 0 2 4460 6690
+92	1921613 26595 256 70662 1.980752 109.140752 1115 1058 1058 1179670 1248090860
+93	1948208 26595 256 70662 1.980752 109.140752 1115 1058 1058 1179670 1248090860
+94	1974803 26595 256 70662 1.980752 109.140752 1115 1058 1058 1179670 1248090860
+95	2001398 31055 256 70662 1.980752 109.140752 1115 0.000752 0.000752 0.83847999999998 0.00063053696000001
+96	2032453 33113 259 70671 1.980753846102 109.140753880225 1111 1058 1058 1175438 1243613404
+97	2065566 31589 259 70671 1.980753846102 109.140753880225 1060 1058 1058 1121480 1186525840
+98	2097155 31589 259 70671 1.980753846102 109.140753880225 1060 1058 1058 1121480 1186525840
+99	2128744 31589 259 70671 1.980753846102 109.140753880225 1060 1058 1058 1121480 1186525840
+100	2160333 32649 259 70671 1.980753846102 109.140753880225 1060 1030 1030 1091800 1124554000
+101	2192982 32649 262 70674 1.980753846102 109.140753880225 1060 1008 1008 1068480 1077027840
+102	2225631 33734 265 70683 1.980754787121 109.140754826333 1096 1058 1058 1159568 1226822944
+103	2259365 30568 265 70683 1.980754787121 109.140754826333 993 1058 1058 1050594 1111528452
+104	2289933 30568 265 70683 1.980754787121 109.140754826333 993 1058 1058 1050594 1111528452
+105	2320501 30568 265 70683 1.980754787121 109.140754826333 993 1058 1058 1050594 1111528452
+106	2351069 30568 265 70683 1.980754787121 109.140754826333 993 1030 1030 1022790 1053473700
+107	2381637 30569 268 70686 1.980754787121 109.140754826333 993 1008 1008 1000944 1008951552
+108	2412206 33357 271 70689 1.980756308085 109.140755643552 1084 1058 1058 1146872 1213390576
+109	2445563 24994 271 70689 1.980756308085 109.140755643552 812 1058 1058 859096 908923568
+110	2470557 24994 271 70689 1.980756308085 109.140755643552 812 1058 1058 859096 908923568
+111	2495551 24994 271 70689 1.980756308085 109.140755643552 812 1058 1058 859096 908923568
+112	2520545 24994 271 70689 1.980756308085 109.140755643552 812 1030 1030 836360 861450800
+113	2545539 24994 274 70692 1.980756308085 109.140755643552 812 1008 1008 818496 825043968
+114	2570533 33861 277 70677 1.980756458758 109.140754358194 1099 1058 1058 1162742 1230181036
+115	2604394 5328 277 69606 1.980756458758 107.670754356106 175 1058 1058 185150 195888700
+116	2609722 5328 277 69606 1.980756458758 107.670754356106 175 1058 1058 185150 195888700
+117	2615050 33420 279 70665 1.980757029542 109.140753468216 1086 1058 1058 1148988 1215629304
+118	2648470 28460 279 70665 1.980757029542 109.140753468216 922 1058 1058 975476 1032053608
+119	2676930 28460 279 70665 1.980757029542 109.140753468216 922 1058 1058 975476 1032053608
+120	2705390 28460 279 70665 1.980757029542 109.140753468216 922 1058 1058 975476 1032053608
+121	2733850 28460 279 70665 1.980757029542 109.140753468216 922 1030 1030 949660 978149800
+122	2762310 28460 282 70668 1.980757029542 109.140753468216 922 1008 1008 929376 936811008
+123	2790770 28533 324 70677 1.990756458758 109.140754358194 924 1058 1058 977592 1034292336
+124	2819303 28533 324 70677 1.990756458758 109.140754358194 924 1058 1058 977592 1034292336
+125	2847836 28533 324 70677 1.990756458758 109.140754358194 924 1058 1058 977592 1034292336
+126	2876369 28533 324 70677 1.990756458758 109.140754358194 924 1030 1030 951720 980271600
+127	2904902 28533 327 70680 1.990756458758 109.140754358194 924 1008 1008 931392 938843136
+128	2933435 4960 331 68731 1.990757029542 106.220753492523 164 1058 1058 173512 183575696
+129	2938395 4960 331 68731 1.990757029542 106.220753492523 164 1058 1058 173512 183575696
+130	2943355 8363 415 70642 2.010756308085 109.130755647685 272 1058 1058 287776 304467008
+131	2951718 8363 415 70642 2.010756308085 109.130755647685 272 1058 1058 287776 304467008
+132	2960081 3166 866 68867 2.94075478359 106.680754826375 103 1058 1058 108974 115294492
+133	2963247 3166 866 68867 2.94075478359 106.680754826375 103 1058 1058 108974 115294492
+134	2966413 1575 1955 68214 4.430753843813 105.710753875725 51 1058 1058 53958 57087564
+135	2967988 1575 1955 68214 4.430753843813 105.710753875725 51 1058 1058 53958 57087564
+136	2969563 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+137	2990344 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+138	3011125 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+139	3031906 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+140	3052687 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+141	3073468 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+142	3094249 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+143	3115030 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+144	3135811 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+145	3156592 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+146	3177373 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+147	3198154 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+148	3218935 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+149	3239716 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+150	3260497 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+151	3281278 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+152	3302059 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+153	3322840 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+154	3343621 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+155	3364402 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+156	3385183 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+157	3405964 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+158	3426745 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+159	3447526 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+160	3468307 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+161	3489088 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+162	3509869 20781 72886 72886 0.1 122.83 1229 0 0 0 0
+163	3530650 20781 72886 72886 0.1 122.83 1229 0 0 0 0
 
